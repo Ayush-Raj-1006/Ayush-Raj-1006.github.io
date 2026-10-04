@@ -3,273 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Ayush Raj, a 3rd-semester student exploring software development, Java, and backend development.">
-    <title>Ayush Raj | Student Portfolio</title>
+    <meta name="description" content="Ayush Raj - Personal Portfolio">
+    <title>Ayush Raj | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
+            background: #f5f9ff;
             color: #1f2937;
-            background: #f8fafc;
+            line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2563eb;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.95rem;
-            color: #374151;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 80px 24px;
-        }
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 70px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #eff6ff, #f8fafc);
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 4.5rem);
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .hero h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #2563eb;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-            color: #4b5563;
-            font-size: 1.05rem;
-        }
-
-        .student-info {
-            margin-top: 24px;
-            color: #6b7280;
-            font-size: 0.95rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: #111827;
+        header h1 {
+            font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        .section-title p {
-            color: #6b7280;
+        header p {
+            font-size: 1.1rem;
+            margin: 5px 0;
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: auto;
+        .tagline {
+            margin-top: 18px;
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
             text-align: center;
-            font-size: 1.05rem;
-            color: #4b5563;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            color: #1d4ed8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1e3a8a;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #1d4ed8;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .about-box p {
+            margin-bottom: 15px;
         }
 
         .project-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 25px;
         }
 
         .project-card {
-            background: #ffffff;
-            padding: 28px;
+            background: white;
+            padding: 25px;
             border-radius: 14px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .project-number {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: #2563eb;
-            margin-bottom: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            border-top: 4px solid #2563eb;
         }
 
         .project-card h3 {
-            font-size: 1.25rem;
+            color: #1d4ed8;
             margin-bottom: 12px;
-            color: #111827;
         }
 
         .project-card p {
-            color: #4b5563;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
-        .skills-container {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
+        .project-card a {
+            display: inline-block;
+            color: white;
+            background: #2563eb;
+            padding: 9px 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
-        .skills-list {
+        .project-card a:hover {
+            background: #1e40af;
+        }
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 14px;
-            margin-bottom: 25px;
+            gap: 15px;
         }
 
         .skill {
-            background: #ffffff;
-            border: 1px solid #dbeafe;
+            background: white;
             color: #1d4ed8;
-            padding: 10px 18px;
+            padding: 12px 22px;
             border-radius: 25px;
-            font-weight: 600;
-        }
-
-        .skills-note {
-            color: #6b7280;
-            font-size: 0.95rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .career-box {
-            max-width: 800px;
-            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
             text-align: center;
-            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .contact-box {
+            text-align: center;
+            background: white;
             padding: 35px;
             border-radius: 14px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
         }
 
-        .career-box p {
-            color: #4b5563;
-            font-size: 1.05rem;
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
         }
 
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: #6b7280;
-            margin-bottom: 20px;
+        .contact-button:hover {
+            background: #1e40af;
         }
 
         footer {
+            background: #1e3a8a;
+            color: white;
             text-align: center;
             padding: 25px;
-            background: #111827;
-            color: #d1d5db;
-            font-size: 0.9rem;
+            margin-top: 30px;
         }
 
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 2.2rem;
             }
 
-            .nav-links {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
             }
 
             .project-grid {
                 grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                font-size: 0.85rem;
-            }
-
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
             }
         }
     </style>
@@ -277,161 +204,143 @@
 
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Ayush Raj</div>
-
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Activities</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#career">Career Goal</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Ayush Raj</h1>
-            <h2>Software Development Student</h2>
-
-            <p>
-                Exploring Java, backend development, problem solving,
-                and practical software development through academic
-                activities and hands-on learning.
-            </p>
-
-            <div class="student-info">
-                Student ID: R25EF044 &nbsp; | &nbsp; 3rd Semester
-            </div>
-        </div>
+    <header>
+        <h1>Ayush Raj</h1>
+        <p>Student ID: R25EF044</p>
+        <p>3rd Semester</p>
+        <p class="tagline">Learning. Building. Growing in Software Development.</p>
     </header>
 
-    <section id="about">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>A little about my learning journey</p>
-        </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Activities & Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#career">Career Goal</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <div class="about-content">
+    <section id="about">
+        <h2>About Me</h2>
+
+        <div class="about-box">
             <p>
-                I’m Ayush Raj, a 3rd-semester student exploring software
-                development with a particular interest in Java and backend
-                development. So far, my learning journey has included
-                setting up development tools, working with Git and GitHub,
-                exploring collaboration tools, and practicing programming
-                problems. I’m continuing to build my skills step by step
-                while preparing for future internship opportunities.
+                I am Ayush Raj, a 3rd-semester student interested in software
+                development and programming. I am currently building my
+                fundamentals through practical activities involving Git,
+                GitHub, Java, and problem solving.
+            </p>
+
+            <p>
+                Through my coursework and learning activities, I have been
+                creating repositories, practicing coding problems, and
+                learning how to manage and present my work using GitHub.
+            </p>
+
+            <p>
+                I am focused on improving my programming skills step by step
+                and gaining practical experience that will help me prepare
+                for future internships and software development opportunities.
             </p>
         </div>
     </section>
 
     <section id="projects">
-        <div class="section-title">
-            <h2>Activities & Projects</h2>
-            <p>My academic learning journey through Activities 1–4</p>
-        </div>
+        <h2>Activities & Projects</h2>
 
         <div class="project-grid">
 
-            <article class="project-card">
-                <span class="project-number">ACTIVITY 1</span>
-                <h3>VS Code Setup</h3>
-
+            <div class="project-card">
+                <h3>Activity 1 – VS Code Setup & Hello World</h3>
                 <p>
-                    Set up Visual Studio Code as a development environment
-                    and created a Hello World repository to begin working
-                    with code and GitHub.
+                    Set up the development environment and created a basic
+                    Hello World program. I also created and organized my first
+                    GitHub repository to begin building my coding portfolio.
                 </p>
-            </article>
 
-            <article class="project-card">
-                <span class="project-number">ACTIVITY 2</span>
-                <h3>Git & GitHub Setup</h3>
+                <a href="https://github.com/Ayush-Raj-1006/hello-world"
+                   target="_blank">
+                    View Hello World Repository
+                </a>
+            </div>
 
+            <div class="project-card">
+                <h3>Activity 2 – Git & GitHub Setup</h3>
                 <p>
-                    Learned and practiced the basics of Git and GitHub,
-                    including creating repositories, making commits,
-                    and managing project files using version control.
+                    Learned the fundamentals of Git and GitHub, including
+                    repositories, commits, version control, and managing
+                    coding work through GitHub.
                 </p>
-            </article>
+            </div>
 
-            <article class="project-card">
-                <span class="project-number">ACTIVITY 3</span>
-                <h3>GitLens & Live Share</h3>
-
+            <div class="project-card">
+                <h3>Activity 3 – GitLens & Live Share</h3>
                 <p>
-                    Explored GitLens and Live Share to understand Git-based
-                    collaboration, code history, and collaborative
-                    development workflows.
+                    Explored GitLens and Live Share to understand Git history,
+                    collaboration, and real-time coding workflows.
                 </p>
-            </article>
+            </div>
 
-            <article class="project-card">
-                <span class="project-number">ACTIVITY 4</span>
-                <h3>LeetCode Practice Repository</h3>
-
+            <div class="project-card">
+                <h3>Activity 4 – LeetCode Practice Repository</h3>
                 <p>
-                    Created a repository for practicing LeetCode problems,
-                    organizing solutions, documenting approaches, and
-                    tracking programming problem-solving progress.
+                    Practiced programming and problem solving through
+                    LeetCode and organized my solutions in a dedicated
+                    GitHub repository.
                 </p>
-            </article>
+
+                <a href="https://github.com/Ayush-Raj-1006/leetcode-solutions"
+                   target="_blank">
+                    View LeetCode Repository
+                </a>
+            </div>
 
         </div>
     </section>
 
     <section id="skills">
-        <div class="section-title">
-            <h2>Skills</h2>
-            <p>Technologies and abilities I am currently developing</p>
-        </div>
+        <h2>Skills</h2>
 
-        <div class="skills-container">
-            <div class="skills-list">
-                <span class="skill">Java</span>
-                <span class="skill">Git</span>
-                <span class="skill">GitHub</span>
-                <span class="skill">Problem Solving</span>
-                <span class="skill">Basic Software Development</span>
-            </div>
-
-            <p class="skills-note">
-                These are skills I am currently developing through academic
-                activities, practice, and hands-on learning.
-            </p>
+        <div class="skills">
+            <div class="skill">Java</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Basic Software Development</div>
         </div>
     </section>
 
     <section id="career">
-        <div class="section-title">
-            <h2>Career Goal</h2>
-            <p>Where I want to grow</p>
-        </div>
+        <h2>Career Goal</h2>
 
         <div class="career-box">
             <p>
-                My career goal is to grow in software development, strengthen
-                my Java and backend development skills, improve my problem-solving
-                abilities, and prepare myself for future internship opportunities.
+                My goal is to grow in software development, strengthen my
+                Java and backend development skills, improve my problem-solving
+                abilities, and gain practical experience through internships
+                and real-world projects.
             </p>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="section-title">
-            <h2>Contact</h2>
-            <p>Connect with me through GitHub</p>
-        </div>
+    <section id="contact">
+        <h2>Contact</h2>
 
-        <p>
-            You can explore my learning journey and coding work on my GitHub profile.
-        </p>
+        <div class="contact-box">
+            <p>
+                You can explore my learning journey and coding work on my
+                GitHub profile.
+            </p>
+
+            <a class="contact-button"
+               href="https://github.com/Ayush-Raj-1006"
+               target="_blank">
+                Visit My GitHub
+            </a>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 Ayush Raj | Student Portfolio</p>
+        <p>© 2026 Ayush Raj | Personal Portfolio</p>
     </footer>
 
 </body>
