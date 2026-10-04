@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Ayush Raj, a 3rd-semester student exploring software development, Java, and backend development.">
+    <title>Ayush Raj | Student Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #374151;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        .student-info {
+            margin-top: 24px;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-number {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .project-card p {
+            color: #4b5563;
+            margin-bottom: 18px;
+        }
+
+        .skills-container {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .skill {
+            background: #ffffff;
+            border: 1px solid #dbeafe;
+            color: #1d4ed8;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .skills-note {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .career-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .career-box p {
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ayush Raj</div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Activities</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#career">Career Goal</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ayush Raj</h1>
+            <h2>Software Development Student</h2>
+
+            <p>
+                Exploring Java, backend development, problem solving,
+                and practical software development through academic
+                activities and hands-on learning.
+            </p>
+
+            <div class="student-info">
+                Student ID: R25EF044 &nbsp; | &nbsp; 3rd Semester
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>A little about my learning journey</p>
+        </div>
+
+        <div class="about-content">
+            <p>
+                I’m Ayush Raj, a 3rd-semester student exploring software
+                development with a particular interest in Java and backend
+                development. So far, my learning journey has included
+                setting up development tools, working with Git and GitHub,
+                exploring collaboration tools, and practicing programming
+                problems. I’m continuing to build my skills step by step
+                while preparing for future internship opportunities.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">
+            <h2>Activities & Projects</h2>
+            <p>My academic learning journey through Activities 1–4</p>
+        </div>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <span class="project-number">ACTIVITY 1</span>
+                <h3>VS Code Setup</h3>
+
+                <p>
+                    Set up Visual Studio Code as a development environment
+                    and created a Hello World repository to begin working
+                    with code and GitHub.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-number">ACTIVITY 2</span>
+                <h3>Git & GitHub Setup</h3>
+
+                <p>
+                    Learned and practiced the basics of Git and GitHub,
+                    including creating repositories, making commits,
+                    and managing project files using version control.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-number">ACTIVITY 3</span>
+                <h3>GitLens & Live Share</h3>
+
+                <p>
+                    Explored GitLens and Live Share to understand Git-based
+                    collaboration, code history, and collaborative
+                    development workflows.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-number">ACTIVITY 4</span>
+                <h3>LeetCode Practice Repository</h3>
+
+                <p>
+                    Created a repository for practicing LeetCode problems,
+                    organizing solutions, documenting approaches, and
+                    tracking programming problem-solving progress.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>Technologies and abilities I am currently developing</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skills-list">
+                <span class="skill">Java</span>
+                <span class="skill">Git</span>
+                <span class="skill">GitHub</span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Basic Software Development</span>
+            </div>
+
+            <p class="skills-note">
+                These are skills I am currently developing through academic
+                activities, practice, and hands-on learning.
+            </p>
+        </div>
+    </section>
+
+    <section id="career">
+        <div class="section-title">
+            <h2>Career Goal</h2>
+            <p>Where I want to grow</p>
+        </div>
+
+        <div class="career-box">
+            <p>
+                My career goal is to grow in software development, strengthen
+                my Java and backend development skills, improve my problem-solving
+                abilities, and prepare myself for future internship opportunities.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Connect with me through GitHub</p>
+        </div>
+
+        <p>
+            You can explore my learning journey and coding work on my GitHub profile.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Ayush Raj | Student Portfolio</p>
+    </footer>
+
+</body>
+</html>
